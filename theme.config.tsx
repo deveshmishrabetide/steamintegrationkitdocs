@@ -19,7 +19,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/betidestudio/SteamIntegrationKit',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.com/betidestudio',
   },
   docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
   footer: {
