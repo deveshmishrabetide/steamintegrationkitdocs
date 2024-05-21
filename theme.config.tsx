@@ -33,6 +33,10 @@ const config: DocsThemeConfig = {
       </a>
     )
   },
+  useNextSeoProps() {
+    return {titleTemplate: '%s – Betide Studio'
+  }
+}
 }
 
 export default config
