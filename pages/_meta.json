@@ -1,6 +1,7 @@
 {
   "index": "Introduction",
   "gettingstarted": "Getting Started",
+  "remotestorage": "Remote Storage",
   "about": {
     "title": "About",
     "type": "page"
