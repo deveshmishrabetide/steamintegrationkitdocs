@@ -27,14 +27,6 @@ const config: DocsThemeConfig = {
   footer: {
     text: "Dsadsdsdss",
   },
-  banner: {
-    key: "2.0-release",
-    text: (
-      <a href="https://nextra.site" target="_blank">
-        🎉 Steam Integration is out now!
-      </a>
-    ),
-  },
   head: (
     <>
       <link rel="icon" type="image/x-icon" href={icon.src} />
