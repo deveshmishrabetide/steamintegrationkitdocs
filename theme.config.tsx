@@ -2,6 +2,7 @@ import React from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { DocsThemeConfig } from "nextra-theme-docs";
 import icon from "./images/favicon.ico";
+import { Analytics } from "@vercel/analytics/react"
 
 const config: DocsThemeConfig = {
   logo: (
