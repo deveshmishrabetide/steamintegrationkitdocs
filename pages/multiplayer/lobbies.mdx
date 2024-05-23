@@ -1,0 +1,55 @@
+# Lobbies
+
+There are basically two methods to use lobbies with the Steam Integration Kit.
+
+## Direct Steamworks SDK Method
+
+This is the most common way to use lobbies directly with the functions provided by the Steamworks SDK and exposed to Blueprints by Steam Integration Kit.
+
+### Create a Lobby
+
+To create a direct steam lobby, you can use the `CreateLobby` function. This function will create a new lobby and return the lobby ID if it was a success.
+
+Please make sure to store reference to the lobby ID, as you will need it to modify the lobby later.
+
+![picture 0](../../images/a79a348b44b184930058e448f97ce93de15e807458df983501bfd9175d25bea9.png)  
+
+
+### Update Lobby Data
+
+Now that you have created a lobby, you can update the lobby data, including lobby owner data, lobby member data, and lobby type etc.
+
+#### Set Lobby Data
+
+To update the lobby data, you can use the `SetLobbyData` function. This function will update the lobby data with the given key and value.
+
+![picture 1](../../images/7f0da7a2835d1484f75fc72a5a19eab6d2b77c287c1e78e43174074b21684c24.png)  
+
+Like in the above example, we update the map name associated with the lobby. 
+
+#### Set Lobby Member Data
+
+To update the lobby member data, you can use the `SetLobbyMemberData` function. This function will update the lobby member data with the given key and value. Also, just to add, this can only update the local user's data for the lobby.
+
+
+![picture 2](../../images/642bb7095ff95483ae41acdf1b847413c8d0845015f68fd62ac35328cae7e8d0.png)  
+
+#### Set Lobby Type 
+
+To update the lobby type, you can use the `SetLobbyType` function. This function will update the lobby type with the given type.
+
+![picture 3](../../images/3b853b764db35f02cb74b1898b3ffb032750e28ae2ec2740ac5865d8eb404f51.png)  
+
+Please note, this value will just update the option you selected while creating the lobby session.
+
+
+### Finding Lobbies
+
+To find lobbies, you can use the `FindLobbies` function. This function will find the lobbies return the lobby IDs of found sessions if it was a success.
+
+![picture 4](../../images/3a4ffb52fb9b3eb8f1674f460a13d5424bd05558faca18ccd3efc5295060fd85.png)  
+
+
+Now that you have the lobby IDs, we can either join the lobby or get the lobby data to display in the UI. Let's talk about both:
+
+#### Joining a Lobby
