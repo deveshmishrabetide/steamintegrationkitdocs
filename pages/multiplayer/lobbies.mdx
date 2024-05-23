@@ -53,3 +53,33 @@ To find lobbies, you can use the `FindLobbies` function. This function will find
 Now that you have the lobby IDs, we can either join the lobby or get the lobby data to display in the UI. Let's talk about both:
 
 #### Joining a Lobby
+
+To join a lobby, you can use the `JoinLobby` function. This function will join the lobby with the given lobby ID.
+
+![picture 5](../../images/680a152657ec7dfce0a8dcd6df162f9781bd8dd7bc10aebdf69c67657ae06bb6.png)  
+
+Like in the above example, we get the length of found lobbies, then subtract 1 to get the first Lobby ID and join it. (Remember, the array starts from 0 and that's why we subtract 1)
+
+#### Get Lobby Data
+
+To get the lobby data, you can use the `GetLobbyData` function. This function will get the lobby data with the given key.
+
+`RequestLobbyData` function is used to get the lobby data from the Steam backend. This function is only used to get the data from the Steam backend, and you can use `GetLobbyData` to get the data from the local cache.
+
+![picture 6](../../images/485848c78e23f1965d14cd9c54352a603bf442cc438fc01baa1b27729048760a.png)  
+
+
+### Leave Lobby
+
+To leave the lobby, you can use the `LeaveLobby` function. This function will leave the lobby.
+
+![picture 7](../../images/a9097305b4c627dd72fb1d892935c912a176a29b1b45bdcd5132f6bc9f71d54a.png)  
+
+
+### Invite Friend to Lobby
+
+To invite a friend to the lobby, you can use the `InviteFriendToLobby` function. This function will invite the friend to the lobby with the given lobby ID.
+
+![picture 9](../../images/d2acfed40e925ddb96597d653ed06a5e16ade2b0435b03460fcc7ac71681e75c.png)  
+
+To get the steam ID of the friend, please checkout the [Steam Friends](/multiplayer/steam-friends) section.
