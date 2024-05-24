@@ -1,4 +1,6 @@
 {
     "basics" : "Basics",
-    "lobbies" : "Lobbies"
+    "lobbies" : "Lobbies",
+    "directp2psession": "Direct P2P Session",
+    "dedicatedserver": "Dedicated Server"
 }
