@@ -8,10 +8,20 @@
     "title": "About",
     "type": "page"
   },
-  "contact": {
-    "title": "Contact ↗",
+  "changelog": {
+    "title": "Changelog",
+    "type": "page"
+  },
+  "marketplace": {
+    "title": "Marketplace ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://marketplace.betidestudio.com",
+    "newWindow": true
+  },
+  "contact": {
+    "title": "Support ↗",
+    "type": "page",
+    "href": "https://discord.gg/betidestudio",
     "newWindow": true
   }
 }
