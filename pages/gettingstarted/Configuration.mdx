@@ -21,6 +21,9 @@ net.MinHandshakeVersion=2
 !NetDriverDefinitions=ClearArray
 +NetDriverDefinitions=(DefName="GameNetDriver",DriverClassName="SteamSockets.SteamSocketsNetDriver",DriverClassNameFallback="OnlineSubsystemUtils.IpNetDriver")
 
+[/Script/OnlineSubsystemSteam.SteamNetDriver]
+NetConnectionClassName=SteamSockets.SteamSocketsNetConnection
+
 [/Script/OnlineSubsystemUtils.IpNetDriver]
 MaxClientRate=1000000000
 MaxInternetClientRate=1000000000
