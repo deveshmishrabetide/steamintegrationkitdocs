@@ -16,7 +16,7 @@ To get the information of a friend, you can use some of the below functions:
 
 These functions will return the information of the friend like their name, avatar, etc.
 
-## Invite Friend
+## Invite Friend to Lobby
 
 This one is interesting. You can invite your friend to join your game. You can use the below function to invite your friend.
 
@@ -24,3 +24,20 @@ In this example, we are inviting a friend to join our lobby but again, you can u
 
 ![picture 2](../../images/7691f23080c5e1ae1158cc2680634b11310651e26140cbbf21be52bdfc1e8aba.png)  
 
+
+### Callback Handling
+
+When the user accepts the invitation, you will get a callback. You can handle the callback and join the user to the lobby
+
+![picture 3](../../images/bfd52b0b36b47080e2eed62aa0e465a50f9e89cd65ebf4d9fab39a5991d0fec7.png)  
+
+### Joining the User to Level
+
+If the Game Server is not connected to the lobby, you can use the callback to game server and join the user to the level when the owner sets the Game Server. Covered in [Lobbies](/multiplayer/lobbies) section.
+
+
+Now, if you have a lobby joined and the lobby is already connected to the level, you can use the below function to join the user to the P2P Session.
+
+![picture 4](../../images/fb526e4d659e025cd10f67eec6af9cc50e76f643fdfa47f618910d935086f97f.png)  
+
+Note : For Dedicated Servers, you can use the IP and Port to connect to the server.
