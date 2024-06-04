@@ -84,11 +84,11 @@ To invite a friend to the lobby, you can use the `InviteFriendToLobby` function.
 
 To get the steam ID of the friend, please checkout the [Steam Friends](/multiplayer/steam-friends) section.
 
-## Lobby To Session
+### Lobby To Session
 
 We already know that lobbies are only existing on the Steam backend, but you can link a game server with a given lobby and it can be a Listen Server too.
 
-### Linking Lobby to a Dedicated Server Session
+#### Linking Lobby to a Dedicated Server Session
 
 To link a lobby to a dedicated server session, you can use the `SetLobbyGameServer` function. This function will link the lobby to the dedicated server session with the given lobby ID and game server IP.
 
@@ -97,7 +97,7 @@ Cannot view the code? [Click here](https://blueprintue.com/blueprint/gochho-e/)
 
 In the above example, we set the lobby game server with the first dedicated server ip and port we found. (Remember, this is just an example and you may want to filter the dedicated server by some criteria)
 
-### Linking Lobby to a Listen Server Session
+#### Linking Lobby to a Listen Server Session
 
 
 So let's talk about the basics first. A Listen Server is a server that is also a client. This means that the server is running on the same machine as the client. This is the most common way to implement multiplayer in games.
@@ -112,3 +112,10 @@ Cannot view the code? [Click here](https://blueprintue.com/blueprint/5xamuwr0/)
 In the above example, we set the lobby game server with the player's steam ID. Remember, the player's steam ID is the steam ID of the player who is hosting the session.
 
 IMPORTANT : The level has to be opened with the `listen` tag to make the player a listen server.You can either use the `OpenLevel` function with the `listen` tag or use `Execute Console Command` function with the `open` command and the `?listen` tag.
+
+
+#### Callback Handling
+
+When a Game Server is set, you will get a callback. You can handle the callback and join the user to the session.
+
+<iframe src="https://blueprintue.com/render/lu_py_gv/" scrolling="no" allowfullscreen width="100%" height="400px"></iframe>
