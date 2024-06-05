@@ -3,5 +3,6 @@
     "lobbies" : "Lobbies",
     "directp2psession": "Direct P2P Session",
     "dedicatedserver": "Dedicated Server",
+    "hostmigration": "Host Migration",  
     "friends": "Friends"
 }
