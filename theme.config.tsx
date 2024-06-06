@@ -26,7 +26,7 @@ const config: DocsThemeConfig = {
   },
   docsRepositoryBase: "https://github.com/shuding/nextra-docs-template",
   footer: {
-    text: "ghh",
+    text: "Made with ❤️ by Betide Studio",
   },
   head: (
     <>
