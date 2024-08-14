@@ -1,3 +1,5 @@
 {
-    "remotestorage": "Remote Storage"
+    "remotestorage": "Remote Storage",
+    "userinventory" : "User Inventory",
+    "workshop" : "Workshop (UGC)"
 }
