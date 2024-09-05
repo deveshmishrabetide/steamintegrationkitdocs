@@ -23,5 +23,6 @@
     "type": "page",
     "href": "https://discord.gg/betidestudio",
     "newWindow": true
-  }
+  },
+  "integrations": "Integrations"
 }
