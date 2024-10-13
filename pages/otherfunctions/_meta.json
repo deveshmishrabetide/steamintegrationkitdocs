@@ -1,5 +1,6 @@
 {
     "remotestorage": "Remote Storage",
     "userinventory" : "User Inventory",
-    "workshop" : "Workshop (UGC)"
+    "workshop" : "Workshop (UGC)",
+    "encryptedtickets" : "Encrypted Tickets"
 }

@@ -1,0 +1,11 @@
+# Encrypted App Tickets
+
+Steam has a feature for developers to create encrypted app tickets. These tickets are to login players into services like Mod.io & EOS (older versions). This is a guide on how to create and grab these tickets.
+
+![picture 0](../../images/10b46c9bc983ebfcf5646efb189172442d427b860f44712c4a9d3f2fab8084eb.png)  
+
+The red hidden value is the Encrypted App Ticket Key. This key is used to encrypt the app ticket and is used to decrypt the app ticket. You can find this key in the *App Data Admin* section of your Steamworks page.
+
+![picture 1](../../images/1720f4359b55f5dff3444f368082ac2636c3aee0e6c2e10ea6c172047ee8ac09.png)  
+
+That is it! You can pass the string value to those services to authenticate the player.
