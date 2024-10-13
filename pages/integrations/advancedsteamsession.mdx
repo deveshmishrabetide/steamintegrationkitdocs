@@ -1,0 +1,65 @@
+import { Steps } from 'nextra/components'
+
+# Advanced Steam Sessions Integration
+
+A lot of projects migrating from Advanced Steam Sessions to SIK have faced issues with the migration process. This guide will help you integrate Advanced Steam Sessions with SIK. This way, you can use both plugins in your project without any issues + your current code will work as expected.
+
+## Steps to integrate Advanced Steam Sessions with SIK
+
+<Steps>
+
+### Step 1: Disable Steam Plugin Requirement
+
+As Advanced Steam Sessions depends on the Epic's Steam plugin, we need to disable it. In the **AdvancedSteamSessions.uplugin** file remove the **OnlineSubsystemSteam** and **SteamShared** from the **Plugins** section, and add **SteamIntegrationKit**. It should look like this:
+
+```json
+	"Plugins": [
+		{
+			"Name": "AdvancedSessions",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystem",
+			"Enabled": true
+		},
+		{
+			"Name": "SteamIntegrationKit",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemUtils",
+			"Enabled": true
+		}
+	]
+```
+### Step 2: Modify Build.cs file
+
+In the **AdvancedSteamSessions.Build.cs** file, under the **PublicDependencyModuleNames** section, add **SteamSDK** module and remove the **Steamworks** module like this:
+
+```csharp
+PublicDependencyModuleNames.AddRange(new string[] { "SteamShared", "SteamSdk", "OnlineSubsystemSteam" });
+```
+
+### Step 3: Correct Steam SDK Path
+
+Do a Find & Replace in the **AdvancedSteamSessions** folder and replace
+
+-  `#include "steam/` with `#include "`.
+-  `#include <steam/` with `#include <`.
+
+For Example, the code in **AdvancedSteamWorkshopLibrary.h** should look like this:
+
+```cpp
+#if (PLATFORM_WINDOWS || PLATFORM_MAC || PLATFORM_LINUX) && STEAM_SDK_INSTALLED
+#include "isteamugc.h"
+#include "isteamremotestorage.h"
+#endif
+```
+
+### Step 4: Modify AdvancedSteamFriendsLibrary.h
+
+In the **AdvancedSteamFriendsLibrary.h** file, remove `#include <isteamapplist.h>`. This file is not needed and will not compile with SIK.
+
+</Steps>
+
+Done! Now you can use Advanced Steam Sessions with SIK without any issues. Feel free to ask any questions in the Discord server if you face any issues.
