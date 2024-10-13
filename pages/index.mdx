@@ -46,21 +46,33 @@ The Steam Integration Kit provides Blueprints for the following Steam SDK interf
 And this is not the end! We have many game specific functions that will help you to integrate Steam features into your game.
 
 ## Marketplace vs GitHub Version
+The Steam Integration Kit is available on both the Unreal Engine Marketplace and GitHub. Below is a comparison of the two versions:
 
-The Steam Integration Kit is available on both the [Unreal Engine Marketplace](https://www.unrealengine.com/marketplace/en-US/product/steam-integration-kit) and [GitHub](https://github.com/betidestudio/SteamIntegrationKit). Let's compare the two versions:
+### Common Features
+- Steam SDK Interfaces: Both versions provide access to nearly all Steam SDK interfaces.
+- Ease of Use: The Marketplace version is pre-compiled and much more user-friendly, while the GitHub version requires you to compile the plugin from source.
+- Support: Purchasing the Marketplace version helps support further development of the plugin.
+### Key Differences
 
-- The Github version has to be compiled from source, while the Marketplace version is a pre-compiled plugin.
-- Almost all Steam SDK interfaces are available in both versions.
-- The Marketplace version is more user-friendly and easier to install and also supports us to continue developing the plugin.
+#### Installation:
 
-Now some major differences:
+- Marketplace Version: Pre-compiled for easy installation.
+- GitHub Version: Requires manual compilation from source.
+#### One Click Deployer:
 
-- One Click Deployer is available only in the Marketplace version because it uses the Steam SDK binaries, which are not available in the GitHub version.
-- The GitHub version uses the Online Subsystem Steam plugin coming with the Unreal Engine, while the Marketplace version uses the modified version of the same.
-    **This helps us to support latest version of Steam SDK on the Marketplace version.**
-- Now because the Marketplace version uses the modified version of the Online Subsystem Steam plugin, we have many fixed bugs and added new features which are not available in the GitHub version.
-- [Coming in Next Update] The Marketplace version uses a single Netdriver for both the Steam and Non-Steam versions of the game, which is not available in the GitHub version.
+Available only in the Marketplace version, as it relies on Steam SDK binaries, which are not included in the GitHub version.
 
+#### Steam SDK Support:
+The Marketplace version uses a modified version of the Online Subsystem Steam plugin, allowing it to support the latest Steam SDK versions. The GitHub version uses the standard plugin that comes with Unreal Engine, which may not support the latest SDK updates.
+
+#### Bug Fixes and New Features:
+The Marketplace version benefits from bug fixes and additional features that are not available in the GitHub version, thanks to its modified Online Subsystem Steam plugin.
+
+#### Unified NetDriver:
+The Marketplace version uses a single NetDriver for both Steam and Non-Steam game versions, offering smoother integration. This feature is not available in the GitHub version.
+
+#### Priority Support:
+Marketplace users receive priority support, ensuring faster assistance and more direct troubleshooting compared to the GitHub version.
 ## Support
 
 If you encounter any issues or have questions about the Steam Integration Kit, please refer to the [documentation](/docs) or contact our [support team](/about) for assistance. We're here to help you make the most of your Steam integration and bring your game to the next level.
