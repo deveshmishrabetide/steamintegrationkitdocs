@@ -2,7 +2,53 @@
 
 There are basically two methods to use lobbies with the Steam Integration Kit.
 
-## Direct Steamworks SDK Method
+
+## Steam Integration Kit Method (Easy)
+
+This is the easiest way to use lobbies with the Steam Integration Kit. 
+
+### Create a Lobby
+
+To create a lobby, you can use the `Create Listen Server Session` function. This function will create a new lobby and return the lobby ID if it was a success.
+
+Please make sure to store reference to the lobby ID, as you will need it to modify the lobby later.
+
+![picture 10](../../images/113fceca658d0c51f95e5ca9f8279aef7ab7875bd0d084e06c9238bc431d4832.png)  
+
+### Lobby Data
+
+You can pass any data you want to store in the lobby in the `Extra Settings` parameter. This data will be stored in the lobby and can be retrieved later and can be used to filter the lobbies.
+
+![picture 11](../../images/baf3bc0bedbd2292c580b27b561c1c632cfe265a3e3f5ad8fe659775e0d9b0ea.png)  
+
+### Finding Lobbies
+
+To find lobbies, you can use the `Find SIK Sessions` function with Match Type set to `Lobby`. This function will find the lobbies return the sessions found if it was a success.
+
+![picture 12](../../images/cf7057df49868b8530fe7394b94464c788a1a45759788225617df7635326b45e.png)  
+
+Now that you have the lobby IDs, we can either join the lobby or get the lobby data to display in the UI. Let's talk about both:
+
+#### Joining a Lobby
+
+To join a lobby, you can use the `Join SIK Session` function. This function will join the lobby with the given lobby ID.
+
+![picture 13](../../images/03f1e29a1f314c921c5445a59b58a33270886bfc4d93cdeb3b812a3cb310603c.png)  
+
+#### Get Lobby Data
+
+To get the lobby data, you can use the SDK method given below or the session settings method given below.
+
+![picture 14](../../images/4633123c86dbe3f0d5adc159b0c492b48261f20f51dbf52350e495ae5cd48f35.png)  
+
+### Leave Lobby
+
+To leave the lobby, you can use the `Destroy SIK Session` function for **both** the host and the client. This function will leave the lobby.
+
+![picture 15](../../images/2ec1236e1a4ba364759daeee0964bfd2b1b08dd61ba8f8d888a9cdb4c5b652da.png)  
+
+
+## Direct Steamworks SDK Method (Advanced)
 
 This is the most common way to use lobbies directly with the functions provided by the Steamworks SDK and exposed to Blueprints by Steam Integration Kit.
 
