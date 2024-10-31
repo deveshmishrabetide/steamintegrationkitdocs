@@ -2,5 +2,6 @@
     "remotestorage": "Remote Storage",
     "userinventory" : "User Inventory",
     "workshop" : "Workshop (UGC)",
-    "encryptedtickets" : "Encrypted Tickets"
+    "encryptedtickets" : "Encrypted Tickets",
+    "webapis" : "Web APIs"
 }
