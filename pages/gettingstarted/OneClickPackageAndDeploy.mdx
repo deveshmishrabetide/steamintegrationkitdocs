@@ -29,6 +29,10 @@ Go to **Edit > Project Settings > Game > SteamIntegrationKit** and make sure the
 - **Build Description**: Enter the description of your Steam build but you can modify it later in the Steamworks backend.
 - **Build Config**: Select the build configuration (e.g. Development, Shipping, etc.).
 - **Maps to Package**: Enter the maps that you want to package (e.g. Map1, Map2, etc.). If you want to override this setting, please scroll down to the **Advanced Settings** section.
+
+<Callout type="warning">
+    **Note**: The **Username** and **Password** can also be set in the Window's environment variables. If you set the **Username** and **Password** in the environment variables, you don't need to set them in the plugin settings. On project restart, the plugin will automatically fetch the **Username** and **Password** from the environment variables and show them in the plugin settings. This is helpful if you want to keep your **Username** and **Password** secure and do not want to push them to the repository.
+</Callout>
  
 ### Create Packaging Profile
  
@@ -58,3 +62,45 @@ Now we are done! To package and deploy your Steam Build, click on SIK > Package 
 ![picture 2](../../images/9e40ce1b857fff55aa8a275b503ea62519ef1bf5241f012beadc9fa3ce175210.png)  
 
 </Steps>
+
+## Packaging Size Issue
+
+When you package your project normally, the size of the packaged build is usually lower than the size of the build that is packaged using the One Click Package and Deploy feature. This is because the One Click Package and Deploy feature uses the Package Launcher to package the build which requires additional modifications to decrease the size of the packaged build.
+
+**Initial Size through Normal Packaging**: 0.98 GB
+
+![picture 4](../../images/aecad937be1ac32abb26fab3dfaeed53af7eb7c36b755dd34b92bf06c9f39a1d.png)  
+
+**Initial Size through Project Launcher (SIK)**: 1.11 GB
+
+![picture 3](../../images/521039b97ec878b79f82dc155f2eeac90d49138fd6d7e7096fc8ddd676adfed8.png)  
+
+**Final Size through Project Launcher (SIK)**: 0.96 GB
+
+![picture 10](../../images/4f25ca9acf4b5ff654ac73768aa00ef7c7e3e4e1424423d02efab8682bc68e49.png)  
+
+Now, to decrease the size of the packaged build, you can follow these steps:
+
+### Step 1 - Open Project Launcher
+
+For many, Project Launcher is a new concept. It is a tool that allows you to package your project with additional settings and modifications. It can be found in the main toolbar under **Platforms > Project Launcher**.
+
+![picture 5](../../images/913ba12763abaa0677852d44705464c9ec16bfe17eb8a82fba659eab142db46a.png)  
+
+### Step 2 - Open Packaging Profile
+
+In the Project Launcher, you can see a list of packaging profiles that you or the One Click Package and Deploy feature has created. Press the **Settings** button to open the packaging profile for the **SIKProfile**.
+
+![picture 6](../../images/1a12e76a67fa96175142bf135dbfdaae5ded332ba8d7a28d4c001a9041493aa8.png)  
+
+### Step 3 - Modify Settings
+
+Basic settings like **Cooked Maps** under **Cook** form the core of sizing issues. You can modify these settings according to your needs.
+
+![picture 7](../../images/710d7049a7433291bcd81a503a4fa8a95fa1b2b42f4dddb46651777e8936cbc5.png)  
+
+Now, the *main* thing, to make it similar to the size of the packaged build, you need to enable the **Store all content in a single file(UnrealPak)** option under **Cook > Advanced Settings**.
+
+![picture 8](../../images/e0e9f558478460c4cbb6816e81bb51226f9ed85bd384d98bd68e379a783e6cd5.png)  
+
+That is it! Now you can package your project using the SIK and the size of the packaged build will be similar to the size of the build that is packaged using the normal packaging process.
