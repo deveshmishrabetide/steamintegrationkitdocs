@@ -1,0 +1,53 @@
+import { Callout } from 'nextra/components'
+
+# Voice Chat with SIK
+
+<Callout type="info">
+    This feature is implemented in version 1.6.2 of Steam Integration Kit.
+</Callout>
+
+
+## Config Changes
+
+To enable Voice Chat, you need to make some changes in the configuration files. You need to enable Voice Chat in the DefaultEngine.ini and DefaultGame.ini files.
+
+```ini copy showLineNumbers filename="DefaultEngine.ini"
+[OnlineSubsystem]
+DefaultPlatformService=Steam
+bHasVoiceEnabled=true
+
+[Voice]
+bEnabled=true
+```
+
+```ini copy showLineNumbers filename="DefaultGame.ini"
+[/Script/Engine.GameSession]
+bRequiresPushToTalk=true
+```
+
+
+## Character Blueprint Changes
+
+Time for the game changes, you need to Add VOIPTalker and then register it with the Player State. Please note that PlayerState may not be available instantly, so you should check if it is valid before registering the VOIPTalker.
+
+![picture 0](../../../images/f84d0c691d80d33c2369040eabe713ebc6d0945ca6e5061981d195f429122a05.png)  
+
+## Enable/Disable Speaking
+
+To enable speaking, you need to Toggle Speaking. You can use the below function to toggle speaking.
+
+![picture 1](../../../images/08ee63fc575b7fb3be51695a491287f0e45fcfa70023091c32c31d96411885fd.png)  
+
+
+## Positional Voice Chat
+
+To turn this into a positional voice chat, after setting the Mic Threshold, you need to modify the VOIPTalker settings and set a **Component to Attach to** and **Attenuation Settings**.
+
+![picture 2](../../../images/3d3e4d250f61822afa05c8edd49be8246726b9d5eb87e8ea52838539c59db855.png)  
+
+## Self Listening Test
+
+You can turn VoiceLoopback to test if your voice is being transmitted correctly.
+
+![picture 3](../../../images/1eac8d5ccf303b2c854c976c3bf82093d066c959d3d415c2d790b1b9de51b0a5.png)  
+
