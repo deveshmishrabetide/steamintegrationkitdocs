@@ -2,6 +2,7 @@
     "remotestorage": "Remote Storage",
     "userinventory" : "User Inventory",
     "workshop" : "Workshop (UGC)",
+    "ownership" : "Game Ownership",
     "encryptedtickets" : "Encrypted Tickets",
     "input" : "Input",
     "webapis" : "Web APIs"
