@@ -26,3 +26,14 @@ For development builds:
 
 - Enable the Relaunch in Steam option to simulate ownership checks.
   - Location: Project Settings → Game → Steam Integration Kit.
+
+
+
+## Multiplayer Servers
+
+For multiplayer games, you can verify if the incoming player owns the game by using Steam Integration Kit's Packet Handler.
+
+```ini copy showLineNumbers filename="DefaultEngine.ini"
+[PacketHandlerComponents]
++Components=OnlineSubsystemSteam.SteamAuthComponentModuleInterface
+```
