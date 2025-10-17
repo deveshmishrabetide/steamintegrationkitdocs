@@ -15,6 +15,10 @@ The One Click Package and Deploy feature allows you to package and deploy your S
 
 ## Setup 
 
+<Callout type="info">
+    **Note**: Please don’t gloss over the information on this page. If you plan to push your game to distribution, this step should not be taken lightly. Read what is written carefully, consider each warning and piece of guidance, and understand how the Unreal Project Launcher works, as this is what will be used to package your game.
+</Callout>
+
 To use the One Click Package and Deploy feature, you need to follow these steps:
 
 <Steps>
@@ -23,12 +27,21 @@ To use the One Click Package and Deploy feature, you need to follow these steps:
 Go to **Edit > Project Settings > Game > SteamIntegrationKit** and make sure the following settings are set:
 
 - **Steam App ID**: Enter your Steam App ID.
+
+<Callout type="warning">
+    **Note**: Don’t use your credentials if you’re not willing to share them with yours team members. It’s fine to use them for your solo project if you won’t be sharing access to your repository with others. As username and password will be stored in your repository.
+
+In cases where you don't have a team account for pushing builds, consider using [Environment Variables](OneClickPackageAndDeploy#using-environment-variables).
+</Callout>
+
 - **Username**: Enter the username of your Steam account OR the username of the Steam account that has access to the Steamworks backend.
 - **Password**: Enter the password of your Steam account OR the password of the Steam account that has access to the Steamworks backend.
 - **Branch Name**: Enter the branch name of your Steam build (e.g. live, dev, etc.).
 - **Build Description**: Enter the description of your Steam build but you can modify it later in the Steamworks backend.
 - **Build Config**: Select the build configuration (e.g. Development, Shipping, etc.).
 - **Maps to Package**: Enter the maps that you want to package (e.g. Map1, Map2, etc.). If you want to override this setting, please scroll down to the **Advanced Settings** section.
+
+### Using Environment Variables
 
 <Callout type="warning">
     **Note**: The **Username** and **Password** can also be set in the Window's environment variables. If you set the **SIK_STEAM_USERNAME** and **SIK_STEAM_PASSWORD** in the environment variables, you don't need to set them in the plugin settings. On project restart, the plugin will automatically fetch the **SIK_STEAM_USERNAME** and **SIK_STEAM_PASSWORD** from the environment variables and show them in the plugin settings. This is helpful if you want to keep your **Username** and **Password** secure and do not want to push them to the repository.
@@ -39,9 +52,18 @@ Go to **Edit > Project Settings > Game > SteamIntegrationKit** and make sure the
 On the main toolbar, click on SIK > Create/Reset Packaging Profile. This will create a new packaging profile for your project.
 ![picture 1](../../images/92cfa5190ed5384801cb29bb7a4032243db41debfb85314d649939f041c29752.png)  
 
-We use packaging profile so that you can play with the settings and modify them according to your needs. 
+We use Project Launcher packaging profile to package your game.
 
 You should now see a new packaging profile in the **Packaging Profiles** section and you can modify the settings according to your needs.
+
+<Callout type="info">
+    **Note**: Make sure you are familiar with the Unreal Engine **Project Launcher**. Changing settings in it can have a colossal effect, such as packaging your game with the Config folder containing ``.ini`` configs. Watch the tutorial on [Project Launcher](https://www.youtube.com/watch?v=XAtOXmyqq18) and read the [Epic documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/preparing-unreal-engine-projects-for-release?application_version=5.6).
+</Callout>
+
+<Callout type="warning">
+    **Note**: To avoid your ``ini`` files being packaged including your uproject file use tick **Store all content in a single file(UnrealPak)** in Project Laucher SIKProfile settings. You can also choose to encrypt any ini files that Unreal Engine packages in advance cook settings. ![ProjectLauncher](../../images/ProjectLauncherCookSettings.png)   
+    </Callout>
+
 
 ### Login to Steamworks Backend
 
@@ -65,7 +87,7 @@ Now we are done! To package and deploy your Steam Build, click on SIK > Package 
 
 ## Packaging Size Issue
 
-When you package your project normally, the size of the packaged build is usually lower than the size of the build that is packaged using the One Click Package and Deploy feature. This is because the One Click Package and Deploy feature uses the Package Launcher to package the build which requires additional modifications to decrease the size of the packaged build.
+When you package your project normally, the size of the packaged build is usually lower than the size of the build that is packaged using the One Click Package and Deploy feature. This is because the One Click Package and Deploy feature uses the **Project Launcher** to package the build which requires additional modifications to decrease the size of the packaged build.
 
 **Initial Size through Normal Packaging**: 0.98 GB
 
@@ -85,6 +107,10 @@ Now, to decrease the size of the packaged build, you can follow these steps:
 
 For many, Project Launcher is a new concept. It is a tool that allows you to package your project with additional settings and modifications. It can be found in the main toolbar under **Platforms > Project Launcher**.
 
+<Callout type="info">
+    **Note**: Make sure you are familiar with the Unreal Engine **Project Launcher**. Changing settings in it can have a colossal effect, such as packaging your game with the Config folder containing ``.ini`` configs. Watch the tutorial on [Project Launcher](https://www.youtube.com/watch?v=XAtOXmyqq18) and read the [Epic documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/preparing-unreal-engine-projects-for-release?application_version=5.6).
+</Callout>
+
 ![picture 5](../../images/913ba12763abaa0677852d44705464c9ec16bfe17eb8a82fba659eab142db46a.png)  
 
 ### Step 2 - Open Packaging Profile
@@ -95,12 +121,16 @@ In the Project Launcher, you can see a list of packaging profiles that you or th
 
 ### Step 3 - Modify Settings
 
-Basic settings like **Cooked Maps** under **Cook** form the core of sizing issues. You can modify these settings according to your needs.
+Basic settings like **Cooked Maps** under **Cook** form the core of sizing issues. You can modify these settings according to your project needs, such as including only the maps that your project uses for the client build.
 
 ![picture 7](../../images/710d7049a7433291bcd81a503a4fa8a95fa1b2b42f4dddb46651777e8936cbc5.png)  
 
-Now, the *main* thing, to make it similar to the size of the packaged build, you need to enable the **Store all content in a single file(UnrealPak)** option under **Cook > Advanced Settings**.
+Now, the *main* thing: to ensure the packaged build size is similar, you need to enable the **Store all content in a single file (UnrealPak)** option under **Cook > Advanced Settings**.
 
 ![picture 8](../../images/e0e9f558478460c4cbb6816e81bb51226f9ed85bd384d98bd68e379a783e6cd5.png)  
 
-That is it! Now you can package your project using the SIK and the size of the packaged build will be similar to the size of the build that is packaged using the normal packaging process.
+<Callout type="warning">
+    **Note**: This is your final warning: make sure **Store all content in a single file (UnrealPak)** is checked if you don’t want ``.ini`` files included in the packaged build.
+    </Callout>
+
+That’s it! Now you can package your project using the SIK, and the size of the packaged build will be similar to that of a build packaged using the normal packaging process.
